@@ -27,12 +27,37 @@ const counterSlice = createSlice({
     }
 });
 
-//If you are curious about them, go ahead. It might not make that much sense tough.
+
+/*Remember, counterSlice is not this:
+{
+    name: "counterSlice",
+    initialState: { count:0, test:{test:"test", test2:"test2"} },
+    reducers: {
+      increment(state=this.initialState, action) {
+        action.payload===undefined ? 
+        state.count++ : state.count += action.payload;
+      },
+      decrement(state=this.initialState, action) {
+        action.payload===undefined ? 
+        state.count-- : state.count -= action.payload;
+      }
+    }
+}
+
+It is an object returned from createSlice(). 
+*/
+//console.log(counterSlice) //Now go check it out
+
+
+//If you are curious about counterSlice.reducer, go ahead. It might not make that much sense tough.
 //console.log(counterSlice.reducer)
-//console.log(counterSlice)
 
 
-export const counterActions = counterSlice.actions;
+export const counterActions = counterSlice.actions; // I know right? We haven't passed actions! 
+//Well, counterSlice is not something you might expect. So console log it to lear what it is
+
+
+
 export const messageActions = messageSlice.actions;
 export const store = configureStore({
   reducer: {
