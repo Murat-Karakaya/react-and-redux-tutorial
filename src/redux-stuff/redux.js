@@ -14,7 +14,7 @@ const messageSlice = createSlice({
 
 const counterSlice = createSlice({
     name: "counterSlice",
-    initialState: { count:0, test:{test:"test", test2:"test2"} },
+    initialState: { count:0 },
     reducers: {
       increment(state=this.initialState, action) {
         action.payload===undefined ? 
